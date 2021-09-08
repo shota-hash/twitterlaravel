@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Response extends Model
 {
     protected $guarded = array('id');
 
     public static $rules = array(
-        'name' => 'required',
-        'email' => 'required | email',
-        'news' => 'required',
+        'contact_id' => 'required',
+        'reply' => 'required',
     );
 }
