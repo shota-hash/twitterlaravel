@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Message extends Model
 {
     protected $guarded = array('id');
 
     public static $rules = array(
-        'name' => 'required',
-        'email' => 'required | email',
+        'contact_id' => 'required',
+        'news' => 'required',
     );
-    public function news(){
-     return $this->hasMany('App\Models\Message');
-}
+    public function getNews(){
+        return $this->news;
+    }
 }
