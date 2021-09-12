@@ -13,7 +13,4 @@ class Message extends Model
         'contact_id' => 'required',
         'news' => 'required',
     );
-    public function getNews(){
-        return $this->news;
-    }
 }
