@@ -11,6 +11,7 @@ class Response extends Model
 
     public static $rules = array(
         'contact_id' => 'required',
+        'message_id' => 'required',
         'reply' => 'required',
     );
 }
