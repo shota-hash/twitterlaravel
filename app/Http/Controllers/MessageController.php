@@ -53,7 +53,7 @@ class MessageController extends Controller
       ], 404);
     }
   }
-  public function destroy(Meesage $message)
+  public function destroy(Message $message)
   {
     $item = Message::where('id', $message->id)->delete();
     if ($item) {
