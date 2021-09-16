@@ -6,5 +6,5 @@ use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\MessageController;
 
 Route::apiResource('/contact', ContactController::class);
-Route::apiResource('/contact/response', ResponseController::class);
-Route::apiResource('/contact/message', MessageController::class);
+Route::apiResource('/response', ResponseController::class);
+Route::apiResource('/message', MessageController::class);
