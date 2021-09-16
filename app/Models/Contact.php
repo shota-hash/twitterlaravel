@@ -9,6 +9,8 @@ class Contact extends Model
 {
     protected $guarded = array('id');
 
+    protected $fillable = ['id', 'name', 'email'];
+
     public static $rules = array(
         'name' => 'required',
         'email' => 'required | email',
