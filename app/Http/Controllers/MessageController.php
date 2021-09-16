@@ -10,6 +10,9 @@ class MessageController extends Controller
     public function index()
   {
     $items = Message::all();
+    foreach($items as $item) {
+      $item->contact;
+    }
     return response()->json([
       'data' => $items
     ], 200);

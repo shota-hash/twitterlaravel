@@ -13,7 +13,7 @@ class Message extends Model
         'contact_id' => 'required',
         'news' => 'required',
     );
-    public function reply(){
-    return $this->hasMany('App\Models\Response');
+    public function contact(){
+    return $this->belongsTo('App\Models\Contact');
 }
 }
