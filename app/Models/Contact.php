@@ -16,10 +16,10 @@ class Contact extends Model
         'email' => 'required | email',
     );
     public function news(){
-     return $this->hasMany('App\Models\Message');
-}
+        return $this->hasMany('App\Models\Message');
+    }
     public function like()
     {
-        return $this->belongsToMany('App\Models\Message')->withTimestamps();
+        return $this->belongsToMany('App\Models\Message');
     }
 }
