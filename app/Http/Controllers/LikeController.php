@@ -7,14 +7,11 @@ use App\Models\Message;
 use App\Models\Contact;
 use App\Models\Like;
 
-class MessageController extends Controller
+class LikeController extends Controller
 {
   public function index()
   {
-    $items = Like::all();
-    foreach ($items as $item) {
-      $item->message;
-    }
+    $items = Message::with('contact', 'like')->get();
     return response()->json([
       'data' => $items
     ], 200);
