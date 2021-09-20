@@ -17,6 +17,7 @@ class CreateLikesTable extends Migration
             $table->bigIncrements('id');
             $table->string('contact_id');
             $table->string('message_id');
+            $table->integer('count');
             $table->timestamps();
         });
     }
