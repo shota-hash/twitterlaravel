@@ -20,6 +20,6 @@ class Contact extends Model
     }
     public function like()
     {
-        return $this->belongsToMany('App\Models\Message');
+        return $this->hasMany('App\Models\Message');
     }
 }

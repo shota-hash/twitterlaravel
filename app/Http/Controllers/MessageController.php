@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
-use App\Models\Like;
 use App\Models\Contact;
 
 class MessageController extends Controller
@@ -67,30 +66,6 @@ class MessageController extends Controller
         'message' => 'Not found',
       ], 404);
     }
-  }
-  public function __construct()
-  {
-    $this->middleware(['contact', 'verified'])->only(['like', 'unlike']);
-  }
-  public function like($id)
-  {
-    Like::create([
-      'message_id' => $id,
-      'contact_id' => Contact::id(),
-    ]);
-
-    session()->flash('success', 'You Liked the Message.');
-
-    return redirect()->back();
-  }
-  public function unlike($id)
-  {
-    $like = Like::where('message_id', $id)->where('contact_id', Contact::id())->first();
-    $like->delete();
-
-    session()->flash('success', 'You Unliked the Message.');
-
-    return redirect()->back();
   }
 }
 
