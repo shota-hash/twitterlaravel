@@ -11,6 +11,9 @@ class MessageController extends Controller
     public function index()
   {
     $items = Message::with('contact', 'like')->get();
+    foreach ($items as $item) {
+      $item->contact;
+    }
     return response()->json([
       'data' => $items
     ], 200);
