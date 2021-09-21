@@ -11,7 +11,6 @@ class Like extends Model
     public static $rules = array(
         'contact_id' => 'required',
         'message_id' => 'required',
-        'count' => 'required',
     );
 
     public function message()

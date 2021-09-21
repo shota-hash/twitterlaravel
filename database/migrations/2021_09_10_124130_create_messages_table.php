@@ -19,6 +19,10 @@ class CreateMessagesTable extends Migration
             $table->string('news');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->foreign('contact_id')
+                ->references('id')
+                ->on('contacts')
+                ->onDelete('cascade');
         });
     }
 
