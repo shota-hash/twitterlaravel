@@ -11,7 +11,7 @@ class LikeController extends Controller
 {
   public function index()
   {
-    $items = like::all();
+    $items = Like::all();
     return response()->json([
       'data' => $items
     ], 200);

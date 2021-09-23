@@ -12,6 +12,7 @@ class Message extends Model
     public static $rules = array(
         'contact_id' => 'required',
         'news' => 'required',
+        'good' =>'required',
     );
     public function contact(){
     return $this->belongsTo('App\Models\Contact');

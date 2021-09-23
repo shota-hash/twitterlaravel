@@ -10,9 +10,9 @@ class MessageController extends Controller
 {
     public function index()
   {
-    $items = Message::all();
+    $items = Message::with('like')->get();
     foreach ($items as $item) {
-      $item->contact;
+      $item->like()->count();
     }
     return response()->json([
       'data' => $items
