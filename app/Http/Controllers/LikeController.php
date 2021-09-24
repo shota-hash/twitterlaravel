@@ -11,7 +11,10 @@ class LikeController extends Controller
 {
   public function index()
   {
-    $items = Like::all();
+    $items = Message::with('Like')->get();
+    foreach ($items as $item) {
+      $item->like()->count();
+    }
     return response()->json([
       'data' => $items
     ], 200);
