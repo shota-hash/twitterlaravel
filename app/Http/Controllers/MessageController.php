@@ -13,6 +13,7 @@ class MessageController extends Controller
     $items = Message::all();
     foreach ($items as $item) {
       $item->contact;
+      $item->likeCount = $item->like->count();
     }
     return response()->json([
       'data' => $items
