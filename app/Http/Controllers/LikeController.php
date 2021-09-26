@@ -22,7 +22,8 @@ class LikeController extends Controller
     if($item) {
       $item->delete();
     }else{
-      $item->save();
+      $form = $request->all();
+      $item = Like::create($form);
     }
     return response()->json([
       'data' => $item
