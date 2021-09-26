@@ -10,3 +10,4 @@ Route::apiResource('/contact', ContactController::class);
 Route::apiResource('/response', ResponseController::class);
 Route::apiResource('/message', MessageController::class);
 Route::apiResource('/like', LikeController::class);
+Route::apiResource('/reply', ResponseController::class);

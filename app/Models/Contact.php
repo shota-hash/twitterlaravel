@@ -22,4 +22,8 @@ class Contact extends Model
     {
         return $this->hasMany('App\Models\Message');
     }
+    public function reply()
+    {
+        return $this->hasMany('App\Models\Response');
+    }
 }

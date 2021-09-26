@@ -23,7 +23,7 @@ class ResponseController extends Controller
   }
   public function show(Response $response)
   {
-    $item = Response::find($contact);
+    $item = Response::find($response);
     if ($item) {
       return response()->json([
         'data' => $item

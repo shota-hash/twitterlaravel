@@ -18,7 +18,7 @@ class LikeController extends Controller
   }
   public function store(Request $request)
   {
-    $item = Like::where('contact_id', $request->contact_id)->where('message_id', $request->message_id)->get();
+    $item = Like::where('contact_id', $request->contact_id)->where('message_id', $request->message_id)->first();
     if($item) {
       $item->delete();
     }else{

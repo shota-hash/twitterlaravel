@@ -21,4 +21,8 @@ class Message extends Model
     {
         return $this->hasMany('App\Models\Like');
     }
+    public function reply()
+    {
+        return $this->hasMany('App\Models\Response');
+    }
 }
