@@ -18,7 +18,12 @@ class LikeController extends Controller
   }
   public function store(Request $request)
   {
-    $item = Like::create($request->all());
+    $item = Like::where('contact_id', $request->contact_id)->where('message_id', $request->message_id)->get();
+    if($item) {
+      $item->delete();
+    }else{
+      $item->save();
+    }
     return response()->json([
       'data' => $item
     ], 201);
