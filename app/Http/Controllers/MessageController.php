@@ -28,10 +28,11 @@ class MessageController extends Controller
   }
   public function show(Message $message)
   {
-    $item = Message::find($message);
-    if ($item) {
+    $message->contact;
+    $message->likeCount = $message->like->count();
+    if ($message) {
       return response()->json([
-        'data' => $item
+        'data' => $message
       ], 200);
     } else {
       return response()->json([
