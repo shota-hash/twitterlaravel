@@ -10,6 +10,9 @@ class ResponseController extends Controller
     public function index()
   {
     $items = Response::all();
+    foreach ($items as $item) {
+      $item->message;
+    }
     return response()->json([
       'data' => $items
     ], 200);
@@ -23,10 +26,10 @@ class ResponseController extends Controller
   }
   public function show(Response $response)
   {
-    $item = Response::find($response);
-    if ($item) {
+    $response->message;
+    if ($response) {
       return response()->json([
-        'data' => $item
+        'data' => $response
       ], 200);
     } else {
       return response()->json([
