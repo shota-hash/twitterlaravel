@@ -11,3 +11,4 @@ Route::apiResource('/response', ResponseController::class);
 Route::apiResource('/message', MessageController::class);
 Route::apiResource('/like', LikeController::class);
 Route::apiResource('/reply', ResponseController::class);
+Route::apiResource('/reply/params', ResponseController::class);
