@@ -23,12 +23,10 @@ class ResponseController extends Controller
   }
   public function show(Response $response, $id)
   {
-    $test = $response->message;
-    dd($test);
-    $item = Response::where('$id', $response)->get();
+    $item = Response::where('message_id', $id)->get();
     if ($item) {
       return response()->json([
-        'data' => $response
+        'data' => $item
       ], 200);
     } else {
       return response()->json([
